@@ -53,12 +53,19 @@ imgs.forEach((img) => {
     imgspan.appendChild(img)
 
     var imgTags = imgspan.querySelectorAll('img')
+    console.log(imgTags.length)
     var lastImgTag = imgTags[imgTags.length - 1]
+    var firstImgTag = imgTags[0]
     gsap.from(lastImgTag, {
       y: -800,
       duration: 2,
       transform: 'scale(1, 0.8)',
       ease: 'Power3.easeOut',
     })
+
+    if (imgTags.length > 2) {
+      firstImgTag.parentNode.removeChild(firstImgTag)
+      return
+    }
   }
 })
