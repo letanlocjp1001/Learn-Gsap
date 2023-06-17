@@ -22,6 +22,8 @@ nav {
   align-items: center;
   text-transform: uppercase;
   font-family: 'Monument Extended';
+  z-index: 1;
+  position: relative;
 }
 
 .menu-item {

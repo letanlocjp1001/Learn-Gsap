@@ -47,11 +47,3 @@ tl.to('.box', 1, {
     autoAlpha: 0,
     stagger: 0.1,
   })
-
-// gsap.from('.menu > div, .hero-container > div', 2, {
-//   opacity: 0,
-//   y: 30,
-//   ease: Expo.easeInOut,
-//   delay: 4.2,
-//   stagger: 0.2,
-// })
