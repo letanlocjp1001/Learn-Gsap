@@ -73,7 +73,6 @@ imgs.forEach((img) => {
 
     if (imgTags.length > 2) {
       firstImgTag.parentNode.removeChild(firstImgTag)
-      return
     }
   }
 })
