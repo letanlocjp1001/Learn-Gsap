@@ -1,17 +1,18 @@
-const lenis = new Lenis({
-  duration: 1.2,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+const parallax = document.querySelector('body')
+parallax.addEventListener('mousemove', function (e) {
+  document.querySelectorAll('.galaxy img').forEach((move) => {
+    var moving = move.getAttribute('data-speed')
+    var x = (e.clientX * moving) / 100
+    var y = (e.clientY * moving) / 100
+
+    move.style.transform = `translate(${x}px, ${y}px)`
+  })
 })
 
-function raf(time) {
-  lenis.raf(time)
-  requestAnimationFrame(raf)
-}
-
-requestAnimationFrame(raf)
+// Logo animation
 let textLogo = document.querySelector('.logo')
 
-const tl2 = gsap.timeline({
+const tl = gsap.timeline({
   defaults: {
     ease: 'power4.inOut',
   },
@@ -22,23 +23,21 @@ textLogo.innerHTML = textLogo.textContent.replace(
   "<span class='letter'>$&</span>"
 )
 
-tl2
-  .from('.letter', 1, {
-    y: -50,
-    x: 50,
-    rotation: 20,
-    autoAlpha: 0,
-    stagger: 0.1,
-  })
-  .from('.nav_list', 1, {
-    y: 50,
-    x: -50,
-    rotation: 180,
-    autoAlpha: 0,
-    stagger: 0.2,
-  })
+tl.from('.letter', 1, {
+  y: -50,
+  x: 50,
+  rotation: 20,
+  autoAlpha: 0,
+  stagger: 0.1,
+}).from('.nav_list', 1, {
+  y: 50,
+  x: -50,
+  rotation: 180,
+  autoAlpha: 0,
+  stagger: 0.2,
+})
 
-const tl = gsap
+gsap
   .timeline({
     scrollTrigger: {
       trigger: '.img',
@@ -47,6 +46,5 @@ const tl = gsap
   })
   .to('.img', {
     stagger: 0.2,
-    y: -700,
-    scrub: 1,
+    y: -800,
   })

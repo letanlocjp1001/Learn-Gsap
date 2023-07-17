@@ -8,8 +8,9 @@
 html,
 body {
   width: 100%;
-  min-height: 100%;
   font-family: "Dancing Script", cursive;
+  background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+  min-height: 100vh;
 }
 
 li {
@@ -103,14 +104,14 @@ h1 {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;
+  z-index: 10;
   margin: 0;
   color: white;
+  pointer-events: none;
 }
 
 .parallax {
   min-height: 100vh;
-  background-color: #ccc;
 }
 
 .galaxy {
@@ -123,9 +124,13 @@ h1 {
   z-index: 1;
 }
 .galaxy img {
-  position: absolute;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: fixed;
   max-width: 220px;
+}
+.galaxy img:nth-child(1) {
+  top: 10%;
+  left: 10%;
+  width: 13%;
 }
 .galaxy img:nth-child(2) {
   top: 50%;
@@ -154,19 +159,18 @@ h1 {
 }
 
 .box {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  height: 100vh;
-  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: start;
   width: 100%;
+  height: 100%;
 }
 
 .img {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  background-size: cover;
-  z-index: -1;
+  flex-basis: 33.3333333333%;
+  z-index: 5;
+  height: 800px;
 }
 .img img {
   width: 100%;
