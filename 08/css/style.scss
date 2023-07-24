@@ -54,15 +54,16 @@ header {
 .nav {
   display: flex;
   column-gap: 50px;
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 25px;
+  // font-weight: bold;
+  font-style: italic;
 
   &_list {
     color: #f200b2;
     position: relative;
     cursor: pointer;
     z-index: 1;
-    padding: 0 2rem;
+    padding: 0 1rem;
     border-radius: 13px;
   }
 
@@ -93,16 +94,26 @@ header {
   }
 }
 
+section {
+  height: 100vh;
+}
+
+.home,
+.about,
+.skill,
+.project,
+.contact {
+  height: 100%;
+  position: relative;
 
 
+}
 
 .home {
-  height: 100vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin: 0 10%;
-  position: relative;
 
   &_left {
 
@@ -303,27 +314,27 @@ header {
   }
 
   li:nth-child(1) {
-    animation: toright 2s linear forwards;
+    animation: toright 2.5s linear forwards;
   }
 
   li:nth-child(2) {
-    animation: fly 1.5s ease-in-out forwards;
+    animation: fly 2.5s ease-in-out forwards;
   }
 
   li:nth-child(3) {
-    animation: drop 1.7s linear forwards;
+    animation: drop 2s linear forwards;
   }
 
   li:nth-child(4) {
-    animation: fly 3s linear forwards;
+    animation: fly 3.5s linear forwards;
   }
 
   li:nth-child(5) {
-    animation: drop 2.1s ease-in forwards;
+    animation: drop 2.5s ease-in forwards;
   }
 
   li:nth-child(6) {
-    animation: toleft 2.5s linear forwards;
+    animation: toleft 3s linear forwards;
   }
 }
 
@@ -410,4 +421,5 @@ header {
   top: 0;
   left: 0;
   right: 0;
+  z-index: -1;
 }
