@@ -55,34 +55,31 @@ header {
   font-size: 25px;
   font-style: italic;
 }
-.nav_list {
+.nav_list a {
   color: #f200b2;
   position: relative;
   cursor: pointer;
   z-index: 1;
   padding: 0 1rem;
-  border-radius: 13px;
+  border-radius: 10px;
 }
-.nav_list::before {
+.nav_list a::before {
   background: #f200b2;
   content: "";
   width: 100%;
   height: 100%;
   display: block;
   position: absolute;
-  left: 0;
-  bottom: 0;
-  margin: auto;
   transform-origin: right top;
   transform: scale(0, 1);
   transition: transform 0.5s;
   z-index: -1;
-  border-radius: 13px;
+  border-radius: 10px;
 }
-.nav_list:hover {
+.nav_list:hover a {
   color: white;
 }
-.nav_list:hover::before {
+.nav_list a:hover::before {
   transform-origin: left top;
   transform: scale(1, 1);
 }
@@ -100,6 +97,33 @@ section {
   position: relative;
 }
 
+.heading {
+  position: absolute;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  left: 60%;
+  top: 40%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  font-size: 28rem;
+  -webkit-text-stroke: 3px #f200b2;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  z-index: -1;
+  opacity: 0.3;
+  animation: headinganima 1.5s linear;
+  transition: all 0.5s ease;
+  width: 100%;
+  height: auto;
+}
+
+@keyframes headinganima {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
 .home {
   display: flex;
   justify-content: flex-start;
@@ -322,33 +346,6 @@ section {
   100% {
     opacity: 1;
     transform: translateX(0);
-  }
-}
-.heading {
-  position: absolute;
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  left: 60%;
-  top: 40%;
-  transform: translate(-50%, -50%) rotate(-30deg);
-  font-size: 28rem;
-  -webkit-text-stroke: 3px #f200b2;
-  -webkit-text-fill-color: transparent;
-  text-transform: uppercase;
-  z-index: -1;
-  opacity: 0.3;
-  animation: headinganima 1.5s linear;
-  transition: all 0.5s ease;
-  width: 100%;
-  height: auto;
-}
-
-@keyframes headinganima {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.3;
   }
 }
 .particles-js-canvas-el {
